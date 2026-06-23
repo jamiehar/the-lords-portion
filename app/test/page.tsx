@@ -8,9 +8,9 @@ import { useProgress } from "@/hooks/useProgress";
 import { ANSWERS } from "@/lib/constants";
 
 const HINTS = [
-  "One of these four statements has an annotation from Demas himself. Look for where his voice intrudes on the scripture.",
-  "Jeremiah 29:11 was written to the entire nation of Israel in exile — not to an individual. How is Demas presenting it?",
-  "The forgery is C. Demas twists a corporate promise of national restoration into personal financial advice.",
+  "Demas is a forger, not an inventor. He didn't make up a verse — he changed one. Read each verse carefully and ask: is this exactly what the Bible says?",
+  "Jeremiah 29:11 is one of the most quoted verses in scripture. Do you remember the exact word? Is it 'prosperity' — or something else?",
+  "The real ESV word is 'welfare,' not 'prosperity.' Card C has been tampered with. The answer is C.",
 ];
 
 const CARDS = [
@@ -18,34 +18,23 @@ const CARDS = [
     letter: "A",
     quote: "The blessing of the Lord makes rich, and he adds no sorrow with it.",
     ref: "Proverbs 10:22 (ESV)",
-    annotation:
-      "A statement about divine providence — true blessing comes from God alone, not human striving, and carries no grief in its wake.",
-    forged: false,
   },
   {
     letter: "B",
     quote:
       "Bring the full tithe into the storehouse, that there may be food in my house. And thereby put me to the test, says the Lord of hosts, if I will not open the windows of heaven for you and pour down for you a blessing until there is no more need.",
     ref: "Malachi 3:10 (ESV)",
-    annotation:
-      "God's covenant call to communal faithfulness in giving, addressed to Israel as a people.",
-    forged: false,
   },
   {
     letter: "C",
     quote:
-      "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+      "For I know the plans I have for you, declares the Lord, plans for prosperity and not for evil, to give you a future and a hope.",
     ref: "Jeremiah 29:11 (ESV)",
-    annotation:
-      "Demas's notation reads: “A personal promise that those who follow God will be prosperous and financially secure — claim this verse for your portfolio.”",
-    forged: true,
   },
   {
     letter: "D",
     quote: "Whoever is generous to the poor lends to the Lord, and he will repay him for his deed.",
     ref: "Proverbs 19:17 (ESV)",
-    annotation: "A call to radical generosity — giving to the poor is giving to God himself.",
-    forged: false,
   },
 ];
 
@@ -83,18 +72,10 @@ export default function TestPage() {
             letter="D"
             className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-3"
           >
-            emas has left a trap. Somewhere along the trail he planted a
-            forged fragment — a real verse, badly twisted — designed to lead
-            a faithful steward astray. It is the oldest trick in the
-            enemy&rsquo;s playbook: take something true, reframe it as a
-            transaction, reduce God&rsquo;s faithfulness to a wealth formula.
-            It looks convincing. It is not.
+            emas has left a trap. Somewhere along the trail he planted a forgery — scripture altered just enough to change everything. It is the oldest trick in the enemy&rsquo;s playbook: take something true, change one word, redirect where it points. The text will look right. It will sound right. But it is not what was written.
           </DropCap>
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
-            You will be presented with four statements about wealth and
-            stewardship, each citing scripture. Three are faithful to what
-            the text actually says. One is Demas&rsquo;s forgery. Identify
-            the counterfeit.
+            Four passages are before you. Three are faithful to the word as it was given. One has been tampered with. Find it.
           </p>
 
           <div className="space-y-4">
@@ -118,17 +99,8 @@ export default function TestPage() {
                       {card.ref}
                     </p>
                   </div>
-                  <p className="font-inter text-[15px] leading-relaxed text-[#4a3414] mb-3">
+                  <p className="font-inter text-[15px] leading-relaxed text-[#4a3414]">
                     &ldquo;{card.quote}&rdquo;
-                  </p>
-                  <p
-                    className={`font-inter text-[13px] leading-relaxed ${
-                      card.forged
-                        ? "text-[#7c352a] border border-[#7c352a]/35 bg-[#7c352a]/[0.06] rounded-sm px-3 py-2"
-                        : "text-[#6b563a]"
-                    }`}
-                  >
-                    {card.annotation}
                   </p>
                 </button>
               );

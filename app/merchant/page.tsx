@@ -71,12 +71,10 @@ export default function MerchantPage() {
             letter="L"
             className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-4"
           >
-            ydia never wrote a careless word. Tucked inside Paul&rsquo;s
-            letter to the Philippians are phrases that have always read as
-            slightly unusual — specific, almost transactional, out of place
-            in a letter otherwise full of joy. These were Lydia&rsquo;s
-            encoded references, slipped in with Paul&rsquo;s blessing. Each
-            one is a fingerprint pointing somewhere else in scripture.
+            ydia was a merchant before she was a believer — trained to 
+            encode value in ordinary language, to say one thing on the 
+            surface and mean another beneath it. When she corresponded with Paul, 
+            she trusted that the right reader would know how to look.
           </DropCap>
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
             Three phrases are marked. Each one hides a reference — a book, a

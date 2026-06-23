@@ -181,11 +181,11 @@ export default function GmPage() {
           title="The Prosperity Test"
           answer="C"
           unlocks="🍽 Unlocks: Dessert is served"
-          logic="Jeremiah 29:11 is a corporate word to exiled Israel, not a personal prosperity promise. Demas's annotation twists it into financial advice. The other three verses are presented faithfully."
+          logic="Card C quotes Jeremiah 29:11 but substitutes 'prosperity' for the actual ESV word 'welfare.' The real verse reads 'plans for welfare and not for evil.' Demas has changed one word to redirect the verse toward a prosperity-gospel reading. Cards A, B, and D are all quoted accurately from ESV."
           hints={[
-            { label: "Hint 1", text: "One of these four statements has an annotation from Demas himself. Look for where his voice intrudes on the scripture." },
-            { label: "Hint 2", text: "Jeremiah 29:11 was written to the entire nation of Israel in exile — not to an individual. How is Demas presenting it?" },
-            { label: "Hint 3", text: "The forgery is C. Demas twists a corporate promise of national restoration into personal financial advice." },
+            { label: "Hint 1", text: "Demas is a forger, not an inventor. He didn't make up a verse — he changed one. Read each verse carefully and ask: is this exactly what the Bible says?" },
+            { label: "Hint 2", text: "Jeremiah 29:11 is one of the most quoted verses in scripture. Do you remember the exact word? Is it 'prosperity' — or something else?" },
+            { label: "Hint 3", text: "The real ESV word is 'welfare,' not 'prosperity.' Card C has been tampered with. The answer is C." },
           ]}
         />
 

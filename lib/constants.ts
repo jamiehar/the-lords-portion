@@ -1,4 +1,4 @@
-export const SONS = ['[Son 1]', '[Son 2]', '[Son 3]']
+export const SONS = ['Jamie', 'Ryan', 'Christopher', 'Tori']
 
 export const ANSWERS = {
   briefing: 'TJE',
