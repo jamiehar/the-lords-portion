@@ -45,7 +45,7 @@ export function ChapterNav({
                 return (
                   <div
                     key={c.roman}
-                    className="w-[26px] h-[26px] rounded-full flex items-center justify-center bg-[#15130d] text-gold-light font-cinzel font-bold text-xs border-[1.5px] border-gold shadow-[0_0_0_3px_rgba(201,168,76,0.12)]"
+                    className="w-[26px] h-[26px] rounded-full flex items-center justify-center bg-gradient-to-br from-gold-light to-gold text-[#241a0e] font-cinzel font-bold text-xs border-[1.5px] border-gold shadow-[0_0_0_3px_rgba(201,168,76,0.12)]"
                   >
                     {c.roman}
                   </div>
@@ -58,7 +58,7 @@ export function ChapterNav({
                     key={c.roman}
                     onClick={() => router.push(c.route)}
                     title="Go to this seal"
-                    className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer bg-gradient-to-br from-gold-light to-gold text-[#241a0e] font-cinzel font-bold text-[11px] border border-gold/60 hover:brightness-105"
+                    className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer bg-[#15130d] text-gold-light font-cinzel font-bold text-[11px] border border-gold/60 hover:brightness-105"
                   >
                     {c.roman}
                   </button>

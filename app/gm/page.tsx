@@ -140,42 +140,39 @@ export default function GmPage() {
         <PuzzleSection
           number="1"
           title="The Architect's Cipher"
-          answer="TJG"
+          answer="TJE"
           unlocks="🍽 Unlocks: Dad gets seated for dinner"
-          logic="Six highlighted numbers in 1 Kings 6 — 20, 20, 20, 10, 10, 7. Unique values in order of first appearance: 20, 10, 7. A=1 cipher: 20=T, 10=J, 7=G. Answer: TJG."
+          logic="Six highlighted numbers in 1 Kings 6 — 20 (v.2), 10 (v.3), 5 (v.6), 5 (v.10), 10 (v.23), 20 (v.20). Unique values in order of first appearance: 20, 10, 5. A=1 cipher: 20=T, 10=J, 5=E. Answer: TJE."
           hints={[
             { label: "Hint 1", text: "The instruction says 'a true cipher wastes nothing.' What does that tell you about the repeated numbers?" },
             { label: "Hint 2", text: "There are only three unique numbers among the six highlighted. Find them in the order they first appear." },
-            { label: "Hint 3", text: "The three unique numbers are 20, 10, and 7. Now use A=1, B=2… what letter does each one give you?" },
+            { label: "Hint 3", text: "Using A=1, B=2… and the three unique numbers, what letter does each one give you?" },
           ]}
         />
 
         <PuzzleSection
           number="2"
           title="The Wall and the Names"
-          answer="3815"
+          answer="101425"
           unlocks="🍽 Unlocks: The salad is served"
-          logic="Three highlighted names and ledger positions — Zaccur (3), Jedaiah (8), Nehemiah son of Azbuk (15). Lowest to highest: 3, 8, 15 → 3815."
+          logic="Three names are hidden in the flowing ESV text of Nehemiah 3, each carrying one letter of TJE from chapter I: Melatiah the Gibeonite (carries T, 'Mela-T-iah'), Jedaiah the son of Harumaph (carries J), and Ezer the son of Jeshua (carries E). Counting every distinct builder or group as one entry, in order of appearance, Melatiah is entry 10, Jedaiah is entry 14, and Ezer is entry 25. Written in order: 101425."
           hints={[
-            { label: "Hint 1", text: "Each highlighted name has a number beside it in the ledger. Those numbers are their positions in the sequence of the wall." },
-            { label: "Hint 2", text: "The instruction says arrange the positions from lowest to highest. What are the three position numbers?" },
-            { label: "Hint 3", text: "The three positions are 3, 8, and 15. Written together lowest to highest, that is your answer." },
+            { label: "Hint 1", text: "Your key from Puzzle 1 is TJE. Each letter sounds within one of the three highlighted names. Say each name aloud — where do you hear the letter?" },
+            { label: "Hint 2", text: "Count every builder or group as one entry. Two names working side by side count as one. Count carefully through the list to find what position each highlighted name holds." },
+            { label: "Hint 3", text: "Melatiah is entry 10, Jedaiah is entry 14, and Ezer is entry 25. Written in the order they appear in the passage: 101425." },
           ]}
         />
 
         <PuzzleSection
           number="3"
           title="The Merchant and the Deacon"
-          answer="Stage 1: PHIKNGACT · Stage 2: PKA"
+          answer="PHIACTKNG"
           unlocks="🍽 Unlocks: Steak and pasta are served"
-          logic="Stage 1 — gold phrases map to PHI, KNG, ACT → PHIKNGACT. Stage 2 — positions 1, 4, 7 of PHIKNGACT → P, K, A → PKA."
+          logic="Three gold phrases in Philippians match three entries in Lydia's Codex. 'Who are at Philippi' → PHI (Lydia's city, named directly). 'In the beginning of the gospel' → ACT (Acts 16, when Paul first came to Philippi and Lydia was baptized). 'A fragrant offering' → KNG (temple language from 1 Kings 6:15, the cedar-lined sanctuary). Written in verse order: PHIACTKNG."
           hints={[
-            { label: "Stage 1 · Hint 1", text: "Each gold phrase is a clue pointing somewhere else in scripture. Where does 'fragrant offering' appear in the Old Testament?" },
-            { label: "Stage 1 · Hint 2", text: "'Book' points to Philippi (PHI). 'Household' points to Acts 16:15 (ACT). What does 'fragrant' point to in 1 Kings 6?" },
-            { label: "Stage 1 · Hint 3", text: "The three codes are PHI, KNG, and ACT — written together in verse order: PHIKNGACT." },
-            { label: "Stage 2 · Hint 1", text: "The grid numbers each word of Philippians 4:7 from 1 to 9. Take the letters from PHIKNGACT at positions 1, 4, and 7." },
-            { label: "Stage 2 · Hint 2", text: "Count along PHIKNGACT: position 1 = P, position 4 = K, position 7 = A." },
-            { label: "Stage 2 · Hint 3", text: "The answer is PKA." },
+            { label: "Hint 1", text: "Each gold phrase is pointing somewhere else in scripture. Try reading each one aloud — what does it remind you of? Where in the Bible do you hear that language?" },
+            { label: "Hint 2", text: "'Who are at Philippi' names the city directly. 'A fragrant offering' is temple language from 1 Kings. 'In the beginning of the gospel' points to when the gospel first arrived in Philippi — which book records that?" },
+            { label: "Hint 3", text: "PHI = Philippi (Phil. 1:1), ACT = Acts (the founding of the church, Acts 16), KNG = Kings (the temple cedar chambers). Written in verse order: PHIACTKNG." },
           ]}
         />
 

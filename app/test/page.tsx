@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChapterPageShell } from "@/components/ChapterPageShell";
 import { AnswerPanel } from "@/components/AnswerPanel";
+import { DropCap } from "@/components/DropCap";
 import { useProgress } from "@/hooks/useProgress";
 import { ANSWERS } from "@/lib/constants";
 
@@ -62,17 +63,33 @@ export default function TestPage() {
       loaded={loaded}
       nextRoute="/escape"
       onUnlockNext={() => unlock("escape")}
+      answerPanel={(turnToNext) => (
+        <AnswerPanel
+          mode="single"
+          length={1}
+          forcedValue={selected}
+          inputDisabled
+          onCheck={(value) => value === ANSWERS.test}
+          onCorrect={turnToNext}
+          hints={HINTS}
+          wrongMessage="The vault holds firm. Demas is counting on your haste."
+          centered
+        />
+      )}
     >
-      {(turnToNext) => (
+      {() => (
         <>
-          <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-3">
-            Demas has left a trap. Somewhere along the trail he planted a
+          <DropCap
+            letter="D"
+            className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-3"
+          >
+            emas has left a trap. Somewhere along the trail he planted a
             forged fragment — a real verse, badly twisted — designed to lead
             a faithful steward astray. It is the oldest trick in the
             enemy&rsquo;s playbook: take something true, reframe it as a
             transaction, reduce God&rsquo;s faithfulness to a wealth formula.
             It looks convincing. It is not.
-          </p>
+          </DropCap>
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
             You will be presented with four statements about wealth and
             stewardship, each citing scripture. Three are faithful to what
@@ -117,23 +134,6 @@ export default function TestPage() {
               );
             })}
           </div>
-
-          <p className="font-inter italic text-[15px] leading-relaxed text-[#6b563a] text-center mt-6">
-            &ldquo;Three are faithful. One is Demas&rsquo;s forgery. Select
-            the counterfeit and name it.&rdquo;
-          </p>
-
-          <AnswerPanel
-            mode="single"
-            length={1}
-            forcedValue={selected}
-            inputDisabled
-            onCheck={(value) => value === ANSWERS.test}
-            onCorrect={turnToNext}
-            hints={HINTS}
-            wrongMessage="The vault holds firm. Demas is counting on your haste."
-            centered
-          />
         </>
       )}
     </ChapterPageShell>

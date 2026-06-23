@@ -22,6 +22,8 @@ interface ChapterPageShellProps {
   nextRoute?: string;
   onUnlockNext?: () => void;
   children: (turnToNext: () => void) => ReactNode;
+  /** Rendered as a true fixed footer outside the page-turn transform, like the top nav. */
+  answerPanel?: (turnToNext: () => void) => ReactNode;
 }
 
 export function ChapterPageShell({
@@ -36,6 +38,7 @@ export function ChapterPageShell({
   nextRoute,
   onUnlockNext,
   children,
+  answerPanel,
 }: ChapterPageShellProps) {
   const router = useRouter();
   const [turning, setTurning] = useState(false);
@@ -52,7 +55,7 @@ export function ChapterPageShell({
   return (
     <div className="dossier-backdrop">
       <ChapterNav current={route} unlocked={unlocked} hideDots={hideDots} />
-      <div className="max-w-[680px] mx-auto px-4 sm:px-6 pt-20 pb-56">
+      <div className="max-w-[680px] mx-auto px-4 sm:px-6 pt-20 pb-64">
         <div className="relative" style={{ perspective: 2000 }}>
           {turning && (
             <div
@@ -107,6 +110,11 @@ export function ChapterPageShell({
           </motion.div>
         </div>
       </div>
+
+      {/* Rendered outside the perspective/transform tree above so it stays truly
+          viewport-fixed (a `transform` or `perspective` ancestor would otherwise
+          turn position:fixed into "fixed to that ancestor" instead). */}
+      {!isLocked && answerPanel?.(turnToNext)}
     </div>
   );
 }

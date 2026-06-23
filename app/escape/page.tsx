@@ -6,6 +6,7 @@ import confetti from "canvas-confetti";
 import { ChapterPageShell } from "@/components/ChapterPageShell";
 import { AnswerPanel } from "@/components/AnswerPanel";
 import { OrnamentalDivider } from "@/components/OrnamentalDivider";
+import { DropCap } from "@/components/DropCap";
 import { useProgress } from "@/hooks/useProgress";
 import { ANSWERS, SONS } from "@/lib/constants";
 
@@ -109,6 +110,20 @@ export default function EscapePage() {
       loaded={loaded}
       showStamp={false}
       hideDots
+      answerPanel={() =>
+        !showCard && (
+          <AnswerPanel
+            mode="single"
+            length={24}
+            placeholder="Speak the name"
+            onCheck={(value) => value.toUpperCase() === ANSWERS.escape}
+            onCorrect={handleCorrect}
+            showHint={false}
+            submitLabel="Speak the Name"
+            centered
+          />
+        )
+      }
     >
       {() => (
         <>
@@ -118,12 +133,15 @@ export default function EscapePage() {
 
           <OrnamentalDivider />
 
-          <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] text-center max-w-md mx-auto mb-10">
-            You have the cipher. You have the fragments. You have traced the
+          <DropCap
+            letter="Y"
+            className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] text-center max-w-md mx-auto mb-10"
+          >
+            ou have the cipher. You have the fragments. You have traced the
             trail from Solomon&rsquo;s temple to Nehemiah&rsquo;s wall to
-            Lydia&rsquo;s letters to Epaphras&rsquo;s key. You have exposed
-            Demas&rsquo;s forgery. The vault is before you.
-          </p>
+            Lydia&rsquo;s letters. You have exposed Demas&rsquo;s forgery.
+            The vault is before you.
+          </DropCap>
 
           <VaultDoor open={vaultOpen} />
 
@@ -178,19 +196,6 @@ export default function EscapePage() {
               </motion.div>
             )}
           </AnimatePresence>
-
-          {!showCard && (
-            <AnswerPanel
-              mode="single"
-              length={24}
-              placeholder="Speak the name"
-              onCheck={(value) => value.toUpperCase() === ANSWERS.escape}
-              onCorrect={handleCorrect}
-              showHint={false}
-              submitLabel="Speak the Name"
-              centered
-            />
-          )}
         </>
       )}
     </ChapterPageShell>

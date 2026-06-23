@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { ParchmentPanel } from "@/components/ParchmentPanel";
 import { OrnamentalDivider } from "@/components/OrnamentalDivider";
 import { DossierFooter } from "@/components/DossierFooter";
+import { DropCap } from "@/components/DropCap";
 
 export default function Home() {
   const router = useRouter();
@@ -43,9 +44,9 @@ export default function Home() {
             <p className="font-courier text-[11px] tracking-[0.25em] uppercase text-[#8a5a22] text-center mb-4">
               Dossier &middot; 01 &middot; The Briefing
             </p>
-            <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-4">
-              In the fourth year of Solomon&rsquo;s reign, his chief treasurer Hananiah set aside a consecrated reserve — silver, gold, and sacred vessels — beyond the official temple treasury, encoding its location in the cubit measurements of 1 Kings 6 and passing the secret to a trusted line of Levites. When Babylon sacked Jerusalem, the reserve didn&rsquo;t disappear — it moved west, carried by exiled believers, partially recovered under Nehemiah, and finally entrusted to a merchant woman in Philippi named Lydia. She hid it again, encoding its location across fragments woven into her correspondence with Paul, using a cipher only her deacon Epaphras could unlock. She called it the Lord&rsquo;s portion — a stewardship, not a secret, waiting for the right person in the right hour.
-            </p>
+            <DropCap letter="I" className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-4">
+              n the fourth year of Solomon&rsquo;s reign, his chief treasurer Hananiah set aside a consecrated reserve — silver, gold, and sacred vessels — beyond the official temple treasury, encoding its location in the cubit measurements of 1 Kings 6 and passing the secret to a trusted line of Levites. When Babylon sacked Jerusalem, the reserve didn&rsquo;t disappear — it moved west, carried by exiled believers, partially recovered under Nehemiah, and finally entrusted to a merchant woman in Philippi named Lydia. She hid it again, encoding its location across fragments woven into her correspondence with Paul. She called it <i>The Lord&rsquo;s Portion</i> — a stewardship, not a secret, waiting for the right person in the right hour.
+            </DropCap>
             <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19]">
               That hour is now. Three fragments have surfaced, and a man named Demas — a scholar tied to a ministry more interested in wealth than worship — has been tracking them. He is one move behind you. You are a man who has spent a lifetime building things that last. Hananiah believed someone like you would come. Find the treasure. Steward it well.
             </p>
