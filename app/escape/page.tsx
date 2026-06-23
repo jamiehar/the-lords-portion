@@ -200,8 +200,8 @@ export default function EscapePage() {
           </DropCap>
 
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
-            Now, the vault is before you. To unlock it, answer the one question Hananiah inscribed above
-            the lock three thousand years ago:
+            Now, the vault is before you. Hananiah inscribed a question above
+            the lock three thousand years ago. Who is the faithful steward?
           </p>
 
           <p className="font-cinzel text-[19px] sm:text-[21px] text-center text-[#5c4a2a] mb-10 max-w-xs mx-auto leading-relaxed">
@@ -214,11 +214,6 @@ export default function EscapePage() {
           </p>
 
           <Vault phase={phase} />
-
-          <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] text-center mt-10 max-w-md mx-auto">
-            What is the name of the steward who has already proven
-            faithful?
-          </p>
         </>
       )}
     </ChapterPageShell>
