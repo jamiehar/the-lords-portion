@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# design inspiration, not part of the app
+/claude-design-inspo
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

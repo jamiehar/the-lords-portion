@@ -2,26 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: #0d0d0b;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #241a0e;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Subtle ambient gold glow + grain on the dark surround */
+  .dossier-backdrop {
+    position: relative;
+    min-height: 100vh;
+    background-color: #0d0d0b;
+    background-image: radial-gradient(
+      120% 46% at 50% -4%,
+      rgba(201, 168, 76, 0.13),
+      transparent 62%
+    );
+  }
+
+  .dossier-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  /* Aged parchment grain overlay, used inside panels */
+  .parchment-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 170px 170px;
+  }
+
+  .ledger-grain {
+    background-color: #d8bf90;
+    background-image: repeating-linear-gradient(
+        180deg,
+        transparent 0 26px,
+        rgba(70, 45, 15, 0.13) 26px 27px
+      ),
+      radial-gradient(circle at 12% 92%, rgba(80, 50, 18, 0.16), transparent 42%),
+      linear-gradient(160deg, #e3d2a6, #ccb480);
   }
 }

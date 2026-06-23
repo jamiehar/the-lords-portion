@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Lord's Portion
 
-## Getting Started
+A Father's Day field-dossier escape room, built with Next.js 14 (App Router) and Tailwind CSS. Players read scripture-based clues, decode ciphers, and unlock five sequential chapters until the final vault opens with a personalized family tribute.
 
-First, run the development server:
+There is no backend — every answer is checked client-side against hardcoded strings, and chapter-unlock progress is persisted to `localStorage` so players can close the tab and resume later.
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The dossier starts at `/` and proceeds through `/briefing` → `/wall` → `/merchant` → `/test` → `/escape`. Locked chapters redirect to a "chamber not yet open" notice until the prior puzzle is solved.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To reset progress during testing, use the small "reset" link in the footer of any page (clears all `unlocked_*` keys from `localStorage`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploying to Vercel
 
-## Learn More
+1. Push this repository to GitHub (already done if you're reading this from the deployed repo).
+2. Go to [vercel.com/new](https://vercel.com/new) and import the `the-lords-portion` repository.
+3. Leave the default Next.js build settings as-is — no environment variables are required.
+4. Deploy. Vercel will rebuild automatically on every push to `main`.
 
-To learn more about Next.js, take a look at the following resources:
+## Game Master page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`/gm` is a hidden, password-protected page (not linked from any navigation, sitemap, or `robots.txt`) containing every puzzle answer, the unlock logic, and the full hint text for the person running the event. The password is gated by a prompt, and the authenticated session is stored in `sessionStorage`, so reopening the page in a new tab requires re-entering the password.
