@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { ChapterPageShell } from "@/components/ChapterPageShell";
@@ -13,8 +13,6 @@ import { ANSWERS, SONS } from "@/lib/constants";
 type Phase = "closed" | "unlocking" | "doors" | "growing" | "open";
 
 const SMALL_SIZE = 170;
-const LARGE_WIDTH = 420;
-const LARGE_HEIGHT = 400;
 
 function fireConfetti() {
   const colors = ["#c9a84c", "#e6cd84", "#f1e6c8", "#fff8e1"];
@@ -23,23 +21,22 @@ function fireConfetti() {
   confetti({ particleCount: 80, angle: 120, spread: 60, origin: { x: 1 }, colors });
 }
 
-function Vault({ phase }: { phase: Phase }) {
+function Vault({ phase, largeSize }: { phase: Phase; largeSize: number }) {
   const showFace = phase === "closed" || phase === "unlocking";
   const doorsOpen = phase === "doors" || phase === "growing" || phase === "open";
   const isExpanded = phase === "growing" || phase === "open";
 
   return (
     <motion.div
-      className="relative mx-auto overflow-hidden border-[6px] border-gold/70"
+      className="relative mx-auto overflow-hidden border-[6px] border-gold/70 rounded-full"
       style={{
         perspective: 1000,
         boxShadow: "0 20px 50px rgba(0,0,0,0.55), inset 0 0 30px rgba(0,0,0,0.4)",
       }}
       initial={false}
       animate={{
-        width: isExpanded ? LARGE_WIDTH : SMALL_SIZE,
-        height: isExpanded ? LARGE_HEIGHT : SMALL_SIZE,
-        borderRadius: isExpanded ? 16 : SMALL_SIZE,
+        width: isExpanded ? largeSize : SMALL_SIZE,
+        height: isExpanded ? largeSize : SMALL_SIZE,
       }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
@@ -127,23 +124,27 @@ function Vault({ phase }: { phase: Phase }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-7 py-6 bg-parchment-light"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 py-6 bg-parchment-light font-serif"
           >
-            <p className="font-courier text-[10px] uppercase tracking-[0.3em] text-[#8a5a22] mb-4">
-              The Lord&rsquo;s Portion &middot; Unlocked
-            </p>
-            <p className="font-inter text-[14px] leading-relaxed text-[#3a2c19] mb-3">
-              The treasure was never only silver and gold. It was a life
-              given to building things that last — a family, a church, a
-              legacy of integrity. You found it because you have always
-              been it.
-            </p>
-            <p className="font-inter text-[14px] leading-relaxed text-[#3a2c19] mb-2">
-              Happy Father&rsquo;s Day, Dad. We love you.
-            </p>
-            <p className="font-cinzel text-[14px] text-[#241a0e] mb-5">
-              — {SONS.join(", ")}
-            </p>
+            <div className="max-w-[80%]">
+              <p className="font-courier text-[12px] uppercase tracking-[0.3em] text-[#8a5a22] mb-3">
+                The Lord&rsquo;s Portion &middot; Unlocked
+              </p>
+              <p className="text-[17px] sm:text-[18px] font-medium leading-relaxed text-[#241a0e] mb-2">
+                You found it. A reserve waiting for faithful hands. Steward it well, as you already have.
+              </p>
+              <p className="text-[17px] sm:text-[18px] font-medium leading-relaxed text-[#241a0e] mb-2">
+                But there&rsquo;s more: 
+                the riches of full assurance in Christ, the wisdom He&rsquo;s built into you over decades, the love of the people at this table.
+                A treasure that won&rsquo;t rust. May God continue to grow it. 
+              </p>
+              <p className="text-[17px] sm:text-[18px] font-medium leading-relaxed text-[#241a0e] mb-3">
+                Happy Father&rsquo;s Day, Dad. We love you.
+              </p>
+              <p className="font-courier text-[12px] tracking-wide text-[#8a5a22]">
+                — {SONS.join(", ")}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -154,6 +155,8 @@ function Vault({ phase }: { phase: Phase }) {
 export default function EscapePage() {
   const { unlocked, loaded } = useProgress();
   const [phase, setPhase] = useState<Phase>("closed");
+  const columnRef = useRef<HTMLDivElement>(null);
+  const [columnWidth, setColumnWidth] = useState(420);
 
   const handleCorrect = () => {
     setPhase("unlocking");
@@ -161,6 +164,19 @@ export default function EscapePage() {
     setTimeout(() => setPhase("growing"), 500 + 900);
     setTimeout(() => setPhase("open"), 500 + 900 + 700);
   };
+
+  useEffect(() => {
+    if (phase === "open") fireConfetti();
+  }, [phase]);
+
+  useEffect(() => {
+    const measure = () => {
+      if (columnRef.current) setColumnWidth(columnRef.current.offsetWidth);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   return (
     <ChapterPageShell
@@ -170,7 +186,6 @@ export default function EscapePage() {
       unlocked={unlocked}
       isLocked={loaded && !unlocked.escape}
       loaded={loaded}
-      showStamp={false}
       answerPanel={() =>
         phase !== "open" && (
           <AnswerPanel
@@ -187,7 +202,7 @@ export default function EscapePage() {
       }
     >
       {() => (
-        <>
+        <div ref={columnRef}>
           <OrnamentalDivider />
 
           <DropCap
@@ -200,7 +215,7 @@ export default function EscapePage() {
           </DropCap>
 
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
-            Now, the vault is before you. Hananiah inscribed a question above
+            Now, the vault is before you. Hananiah inscribed a verse above
             the lock three thousand years ago. Who is the faithful steward?
           </p>
 
@@ -213,8 +228,8 @@ export default function EscapePage() {
             </span>
           </p>
 
-          <Vault phase={phase} />
-        </>
+          <Vault phase={phase} largeSize={columnWidth + 40} />
+        </div>
       )}
     </ChapterPageShell>
   );

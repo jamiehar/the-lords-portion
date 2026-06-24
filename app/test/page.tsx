@@ -9,8 +9,8 @@ import { ANSWERS } from "@/lib/constants";
 
 const HINTS = [
   "Demas is a forger, not an inventor. He didn't make up a verse — he changed one. Read each verse carefully and ask: is this exactly what the Bible says?",
-  "Jeremiah 29:11 is one of the most quoted verses in scripture. Do you remember the exact word? Is it 'prosperity' — or something else?",
-  "The real ESV word is 'welfare,' not 'prosperity.' Card C has been tampered with. The answer is C.",
+  "In one of the most quoted verses in scripture, does the word 'welfare' ring any bells?",
+  "Jeremiah 29:11 says 'plans for welfare,' not 'prosperity.' Card C has been tampered with.",
 ];
 
 const CARDS = [
@@ -72,7 +72,7 @@ export default function TestPage() {
             letter="D"
             className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-3"
           >
-            emas has left a trap. Somewhere along the trail he planted a forgery — scripture altered just enough to change everything. It is the oldest trick in the enemy&rsquo;s playbook: take something true, change one word, redirect where it points. The text will look right. It will sound right. But it is not what was written.
+            emas has left a trap. Somewhere along the trail he planted a forgery — scripture altered just enough to change everything. It is the oldest trick in the enemy&rsquo;s playbook: take something true, twist it and redirect where it points. The text will look and sound right. But it is not what was written.
           </DropCap>
           <p className="font-inter text-[16.5px] leading-[1.75] text-[#3a2c19] mb-6">
             Four passages are before you. Three are faithful to the word as it was given. One has been tampered with. Find it.

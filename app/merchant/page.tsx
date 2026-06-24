@@ -8,7 +8,7 @@ import { ANSWERS } from "@/lib/constants";
 
 const HINTS = [
   "Each gold phrase is pointing somewhere else in scripture. Try reading each one aloud — what does it remind you of? Where in the Bible do you hear that language?",
-  "'Who are at Philippi' names the city directly. 'A fragrant offering' is temple language from 1 Kings. 'In the beginning of the gospel' points to when the gospel first arrived in Philippi — which book records that?",
+  "'Who are at Philippi' names the city directly. 'A fragrant offering' is temple language. 'In the beginning of the gospel' points to when the gospel first arrived in Philippi — which book records that?",
   "PHI = Philippi (Phil. 1:1), ACT = Acts (the founding of the church, Acts 16), KNG = Kings (the temple cedar chambers). Written in verse order: PHIACTKNG.",
 ];
 

@@ -67,70 +67,70 @@ export default function WallPage() {
               </p>
               <div className="space-y-3.5 font-inter text-[14.5px] leading-relaxed text-[#4a3414]">
                 <p>
-                  Then Eliashib the high priest rose up with his brothers
+                  Then <Gold>Eliashib</Gold> the high priest rose up with his brothers
                   the priests, and they built the Sheep Gate. They
                   consecrated it and set its doors. They consecrated it as
                   far as the Tower of the Hundred, as far as the Tower of
                   Hananel. And next to him the men of Jericho built. And
-                  next to them Zaccur the son of Imri built.
+                  next to them <Gold>Zaccur</Gold> the son of Imri built.
                 </p>
                 <p>
-                  The sons of Hassenaah built the Fish Gate. They laid its
+                  The sons of <Gold>Hassenaah</Gold> built the Fish Gate. They laid its
                   beams and set its doors, its bolts, and its bars. And
-                  next to them Meremoth the son of Uriah, son of Hakkoz
-                  repaired. And next to them Meshullam the son of
-                  Berechiah, son of Meshezabel repaired. And next to them
-                  Zadok the son of Baana repaired. And next to them the
-                  Tekoites repaired, but their nobles would not stoop to
+                  next to them <Gold>Meremoth</Gold> the son of Uriah, son of Hakkoz
+                  repaired. And next to them <Gold>Meshullam</Gold> the son of
+                  Berechiah, son of Meshezabel repaired. And next to them{" "}
+                  <Gold>Zadok</Gold> the son of Baana repaired. And next to them the{" "}
+                  <Gold>Tekoites</Gold> repaired, but their nobles would not stoop to
                   serve their Lord.
                 </p>
                 <p>
-                  Joiada the son of Paseah and Meshullam the son of
+                  <Gold>Joiada</Gold> the son of Paseah and <Gold>Meshullam</Gold> the son of
                   Besodeiah repaired the Gate of Yeshanah. They laid its
                   beams and set its doors, its bolts, and its bars. And
-                  next to them repaired <Gold>Melatiah the Gibeonite</Gold>{" "}
-                  and Jadon the Meronothite, the men of Gibeon and of
+                  next to them repaired <Gold>Melatiah</Gold> the Gibeonite{" "}
+                  and <Gold>Jadon</Gold> the Meronothite, the men of Gibeon and of
                   Mizpah, the seat of the governor of the province Beyond
-                  the River. Next to them Uzziel the son of Harhaiah,
-                  goldsmiths, repaired. Next to him Hananiah, one of the
+                  the River. Next to them <Gold>Uzziel</Gold> the son of Harhaiah,
+                  goldsmiths, repaired. Next to him <Gold>Hananiah</Gold>, one of the
                   perfumers, repaired, and they restored Jerusalem as far
-                  as the Broad Wall. Next to them Rephaiah the son of Hur,
+                  as the Broad Wall. Next to them <Gold>Rephaiah</Gold> the son of Hur,
                   ruler of half the district of Jerusalem, repaired. Next
-                  to them <Gold>Jedaiah the son of Harumaph</Gold> repaired
-                  opposite his house. And next to him Hattush the son of
-                  Hashabneiah repaired. Malkijah the son of Harim and
-                  Hasshub the son of Pahath-moab repaired another section
-                  and the Tower of the Ovens. Next to him Shallum the son
+                  to them <Gold>Jedaiah</Gold> the son of Harumaph repaired
+                  opposite his house. And next to him <Gold>Hattush</Gold> the son of
+                  Hashabneiah repaired. <Gold>Malkijah</Gold> the son of Harim and{" "}
+                  <Gold>Hasshub</Gold> the son of Pahath-moab repaired another section
+                  and the Tower of the Ovens. Next to him <Gold>Shallum</Gold> the son
                   of Hallohesh, ruler of half the district of Jerusalem,
                   repaired, he and his daughters.
                 </p>
                 <p>
-                  Hanun and the inhabitants of Zanoah repaired the Valley
+                  <Gold>Hanun</Gold> and the inhabitants of Zanoah repaired the Valley
                   Gate. They rebuilt it and set its doors, its bolts, and
                   its bars, and repaired a thousand cubits of the wall, as
                   far as the Dung Gate.
                 </p>
                 <p>
-                  Malchijah the son of Rechab, ruler of the district of
+                  <Gold>Malchijah</Gold> the son of Rechab, ruler of the district of
                   Beth-haccherem, repaired the Dung Gate. He rebuilt it and
                   set its doors, its bolts, and its bars.
                 </p>
                 <p>
-                  And Shallum the son of Col-hozeh, ruler of the district
+                  And <Gold>Shallum</Gold> the son of Col-hozeh, ruler of the district
                   of Mizpah, repaired the Fountain Gate. He rebuilt it and
                   covered it and set its doors, its bolts, and its bars.
                   And he built the wall of the Pool of Shelah of the
                   king&rsquo;s garden, as far as the stairs that go down
-                  from the city of David. After him Nehemiah the son of
+                  from the city of David. After him <Gold>Nehemiah</Gold> the son of
                   Azbuk, ruler of half the district of Beth-zur, repaired
                   to a point opposite the tombs of David, as far as the
                   artificial pool, and as far as the house of the mighty
-                  men. After him the Levites repaired: Rehum the son of
-                  Bani. Next to him Hashabiah, ruler of half the district
+                  men. After him the Levites repaired: <Gold>Rehum</Gold> the son of
+                  Bani. Next to him <Gold>Hashabiah</Gold>, ruler of half the district
                   of Keilah, repaired for his district. After him their
-                  brothers repaired: Bavvai the son of Henadad, ruler of
+                  brothers repaired: <Gold>Bavvai</Gold> the son of Henadad, ruler of
                   half the district of Keilah. Next to him{" "}
-                  <Gold>Ezer the son of Jeshua</Gold>, ruler of Mizpah,
+                  <Gold>Ezer</Gold> the son of Jeshua, ruler of Mizpah,
                   repaired another section opposite the ascent to the
                   armory at the buttress.
                 </p>

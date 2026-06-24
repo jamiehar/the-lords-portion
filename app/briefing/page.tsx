@@ -7,7 +7,7 @@ import { useProgress } from "@/hooks/useProgress";
 import { ANSWERS } from "@/lib/constants";
 
 const HINTS = [
-  "The instruction says 'a true cipher wastes nothing.' What does that tell you about the repeated numbers?",
+  "A true cipher wastes nothing. What does that tell you about the repeated numbers?",
   "There are only three unique numbers among the six highlighted. Find them in the order they first appear.",
   "Using A=1, B=2… and the three unique numbers, what letter does each one give you?",
 ];
@@ -102,10 +102,8 @@ export default function BriefingPage() {
                   and he overlaid it with pure gold.&rdquo;
                 </p>
               </div>
-              <p className="font-courier text-[10.5px] uppercase tracking-[0.15em] text-[#7c4a16] mt-5">
-                Cipher Key &middot; A=1 &middot; B=2 &middot; &hellip; &middot; Z=26
-              </p>
             </div>
+              
           </div>
         </>
       )}

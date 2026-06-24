@@ -55,8 +55,8 @@ export function ChapterPageShell({
   return (
     <div className="dossier-backdrop">
       <ChapterNav current={route} unlocked={unlocked} hideDots={hideDots} />
-      <div className="max-w-[680px] mx-auto px-4 sm:px-6 pt-20 pb-64">
-        <div className="relative" style={{ perspective: 2000 }}>
+      <div className="flex justify-center px-4 sm:px-6 pt-20 pb-64">
+        <div className="relative w-full max-w-[680px]" style={{ perspective: 2000 }}>
           {turning && (
             <div
               className="absolute inset-0 rounded-[5px] border border-seal/45"
