@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { ChapterPageShell } from "@/components/ChapterPageShell";
@@ -28,7 +28,7 @@ function Vault({ phase, largeSize }: { phase: Phase; largeSize: number }) {
 
   return (
     <motion.div
-      className="relative mx-auto overflow-hidden border-[6px] border-gold/70 rounded-full"
+      className="relative mx-auto aspect-square max-w-full overflow-hidden border-[6px] border-gold/70 rounded-full"
       style={{
         perspective: 1000,
         boxShadow: "0 20px 50px rgba(0,0,0,0.55), inset 0 0 30px rgba(0,0,0,0.4)",
@@ -36,7 +36,6 @@ function Vault({ phase, largeSize }: { phase: Phase; largeSize: number }) {
       initial={false}
       animate={{
         width: isExpanded ? largeSize : SMALL_SIZE,
-        height: isExpanded ? largeSize : SMALL_SIZE,
       }}
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
@@ -155,8 +154,8 @@ function Vault({ phase, largeSize }: { phase: Phase; largeSize: number }) {
 export default function EscapePage() {
   const { unlocked, loaded } = useProgress();
   const [phase, setPhase] = useState<Phase>("closed");
-  const columnRef = useRef<HTMLDivElement>(null);
-  const [columnWidth, setColumnWidth] = useState(420);
+  const [columnNode, setColumnNode] = useState<HTMLDivElement | null>(null);
+  const [columnWidth, setColumnWidth] = useState(0);
 
   const handleCorrect = () => {
     setPhase("unlocking");
@@ -170,13 +169,13 @@ export default function EscapePage() {
   }, [phase]);
 
   useEffect(() => {
-    const measure = () => {
-      if (columnRef.current) setColumnWidth(columnRef.current.offsetWidth);
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
+    if (!columnNode) return;
+    const observer = new ResizeObserver((entries) => {
+      setColumnWidth(entries[0].contentRect.width);
+    });
+    observer.observe(columnNode);
+    return () => observer.disconnect();
+  }, [columnNode]);
 
   return (
     <ChapterPageShell
@@ -202,7 +201,7 @@ export default function EscapePage() {
       }
     >
       {() => (
-        <div ref={columnRef}>
+        <div ref={setColumnNode}>
           <OrnamentalDivider />
 
           <DropCap
@@ -228,7 +227,7 @@ export default function EscapePage() {
             </span>
           </p>
 
-          <Vault phase={phase} largeSize={columnWidth + 40} />
+          <Vault phase={phase} largeSize={columnWidth} />
         </div>
       )}
     </ChapterPageShell>
